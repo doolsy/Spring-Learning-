@@ -1,0 +1,39 @@
+spring:
+    datasource:
+      url: jdbc:mysql://localhost:3306/mybdd
+      username: root
+      password: root
+      driverClassName: com.mysql.jdbc.Driver
+    jpa:
+        database-platform: org.hibernate.dialect.MySQLDialect
+        database: MYSQL
+        show-sql: true
+        properties:
+            hibernate.cache.use_second_level_cache: true
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: false
+            hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+            generate-ddl: true
+            hibernate.ddl-auto: create-drop
+            hibernate.default_schema: public
+    cloud:
+        config:
+            enabled: true
+  # to see mail config => https://github.com/ozimov/spring-boot-email-tools
+    mail:
+        host: smtp.gmail.com
+        port: 587
+        username: lezybeatz@gmail.com
+        password: lezyboyz
+        properties.mail.smtp:
+            auth: true
+            starttls.enable: true
+            starttls.required: true
+
+   # social:
+   #         facebook:
+    #            app-secret: 5a000e1bd90c61290513a14c699c7b7e
+     #           app-id: 1149868541807946
+      #      google:
+       #         app-secret: usgK1eRXCWQZWEahO50K1ufG
+        #        app-id: 174703849117-comguhe67pddlg4d50jr5n7uecgpn180.apps.googleusercontent.com
