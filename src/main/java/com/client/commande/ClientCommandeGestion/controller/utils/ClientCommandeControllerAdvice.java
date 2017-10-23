@@ -27,16 +27,16 @@ public class ClientCommandeControllerAdvice {
         @ResponseBody
         @ExceptionHandler(AuthenticationException.class)
         @ResponseStatus(HttpStatus.UNAUTHORIZED)
-        ResponseEntity AuthenticationExceptionHandler(AuthenticationException ex) {
-                //return new VndErrors("error", ex.getMessage());
-               return new ResponseBuilder<TokenDTO>().error(Constants.BusinessMessages.AUTHENTICATION_ERROR);
+        VndErrors AuthenticationExceptionHandler(AuthenticationException ex) {
+                return new VndErrors("error", ex.getMessage());
+               //return new ResponseBuilder<TokenDTO>().error(Constants.BusinessMessages.AUTHENTICATION_ERROR);
         }
 
 
         @ResponseBody
         @ExceptionHandler(Exception.class)
         @ResponseStatus(HttpStatus.BAD_REQUEST)
-        VndErrors ExceptionHandler(UsernameNotFoundException ex) {
+        VndErrors ExceptionHandler(Exception ex) {
                 return new VndErrors("error", ex.getMessage());
         }
 }

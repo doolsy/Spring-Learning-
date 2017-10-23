@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public Utilisateur inscription( Utilisateur utilisateur) {
-        utilisateur.setDateInscription(new java.sql.Date(java.util.Calendar.getInstance().getTime().getTime()));
+
         utilisateur.setMotDePasse(passwordEncoder.encode(utilisateur.getMotDePasse()));
         userRepository.save(utilisateur);
         return utilisateur;

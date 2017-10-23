@@ -19,7 +19,7 @@ public class UtilisateurDTO extends ResourceSupport{
     private Long   identifiant;
     private String email;
 
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(access = JsonProperty.Access.READ_WRITE)
     @NotNull
     @NotBlank
     @NotEmpty
@@ -30,7 +30,6 @@ public class UtilisateurDTO extends ResourceSupport{
     @NotEmpty
     private String nom;
 
-    @JsonIgnore
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date dateInscription;
 
